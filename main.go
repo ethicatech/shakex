@@ -70,7 +70,7 @@ func (s Searcher) Search(w http.ResponseWriter, r *http.Request) {
 		startStr, middleStr, endStr := html.EscapeString(string(start)), html.EscapeString(string(middle)), html.EscapeString(string(end))
 
 		if isHTMX {
-			fmt.Fprintf(w, `<tr><td><pre>%s<mark>%s</mark>%s</pre></td></tr>`, startStr, middleStr, endStr)
+			fmt.Fprintf(w, `<tr><td>%s<mark>%s</mark>%s</td></tr>`, startStr, middleStr, endStr)
 			continue
 		}
 		results = append(results, startStr+middleStr+endStr)
